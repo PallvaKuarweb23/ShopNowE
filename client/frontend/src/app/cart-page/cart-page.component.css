@@ -1,0 +1,95 @@
+.cart-page {
+  margin-top: 40px;
+  margin-bottom: 60px;
+  /* margin: auto; */
+  width: 80%;
+  /* display: flex; */
+  /* margin-left: 5%; */
+  /* border: 1px solid red; */
+  /* margin-right: 5%; */
+  /* padding: 10px; */
+}
+img {
+  width: 120%;
+}
+h1 {
+  text-align: center;
+}
+
+.details {
+  /* width: 60%; */
+  margin-top: 4%;
+  margin-left: 5%;
+  border: 1px solid #ddd;
+}
+.details img {
+  height: 150px;
+}
+.details ul {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+}
+.summary {
+  /* margin-top: 20px; */
+  /* z-index: 10px; */
+  /* margin-bottom: 20px; */
+  position: fixed;
+  margin-left: 75%;
+
+  background-color: white; /* You can modify the background color when sticky */
+}
+.summary h3 {
+  text-align: center;
+}
+.summary ul {
+  list-style-type: none;
+  padding: 5%;
+  border: 1px solid #ddd;
+}
+.summary ul li {
+  display: flex;
+  justify-content: space-between;
+}
+#CheckoutBtn {
+  width: 100%;
+}
+button:hover {
+  background-color: green;
+  color: white;
+  cursor: pointer;
+  padding: 2px;
+}
+@media screen and (max-width: 767px) {
+  #main-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .summary {
+    position: relative;
+    margin-left: 15% !important;
+    margin: auto;
+    background-color: white; /* You can modify the background color when sticky */
+  }
+  .details {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: 15% !important;
+    margin: auto;
+  }
+  .ullistitems {
+    display: flex;
+    flex-direction: column;
+  }
+  h1 {
+    margin-left: 25%;
+  }
+}

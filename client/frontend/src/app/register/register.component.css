@@ -1,0 +1,13 @@
+a {
+  text-decoration: none;
+}
+.btn {
+  margin-left: 45%;
+}
+/* Apply styles for screens with a maximum width of 767px (typical for smartphones) */
+@media screen and (max-width: 767px) {
+  /* Your mobile styles here */
+  .btn {
+    margin-left: 0%;
+  }
+}

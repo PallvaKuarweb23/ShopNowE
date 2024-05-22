@@ -1,0 +1,30 @@
+img {
+  width: 50px;
+  margin-top: 0px;
+  height: 40px;
+  border-bottom: 1px solid #ddd;
+}
+button {
+  cursor: pointer;
+  border-radius: 5px;
+}
+button:hover {
+  background-color: green;
+  color: white;
+}
+th {
+  font-size: larger;
+}
+.table-striped {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 80%;
+  /* margin: auto; */
+  margin-left: 10%;
+  text-align: center;
+}
+@media screen and (max-width: 767px) {
+  #main {
+    border: 1px solid red;
+  }
+}

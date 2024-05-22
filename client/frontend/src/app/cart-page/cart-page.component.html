@@ -1,0 +1,52 @@
+<div class="cart-page">
+  <h1>Cart Page</h1>
+  <div class="row" id="main-container">
+    <div class="col-sm-10 details" *ngFor="let product of cartData">
+      <ul class="ullistitems">
+        <li>
+          <img src="{{ product.productImage }}" alt="" />
+        </li>
+        <li>
+          <span>Product Name:{{ product.productName }}</span>
+        </li>
+        <li>
+          <span>Price: ₹{{ product.price }} </span>
+        </li>
+        <li>
+          <span>Quantity: ₹{{ product.quantity }}</span>
+        </li>
+        <li>
+          <button (click)="RemoveToCart(product)">Remove From Cart</button>
+        </li>
+        <li>
+          <button (click)="payNow(product)">Buy Now</button>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-3 summary">
+      <h3>Summary</h3>
+      <ul>
+        <li>
+          <span>Amount</span><span>₹{{ priceSummary.price }}</span>
+        </li>
+        <li>
+          <span>Tax</span><span>₹{{ priceSummary.tax }}</span>
+        </li>
+        <li>
+          <span>Delivery</span><span>₹{{ priceSummary.delivery }}</span>
+        </li>
+        <li>
+          <span>Discount</span><span>₹{{ priceSummary.discount }}</span>
+        </li>
+        <hr />
+        <li>
+          <span><h4>Total</h4></span
+          ><span
+            ><h4>₹{{ priceSummary.total }}</h4></span
+          >
+        </li>
+        <button id="CheckoutBtn" (click)="checkoutRedirect()">Checkout</button>
+      </ul>
+    </div>
+  </div>
+</div>

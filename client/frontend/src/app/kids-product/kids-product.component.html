@@ -1,0 +1,69 @@
+<div class="mainContainer">
+  <div class="left">
+    <h4>Filters</h4>
+
+    <div>
+      <h5>Brands</h5>
+      <div class="brand">
+        <label
+          ><input type="checkbox" (change)="onBrandChange('Trendy Boys ')" />
+          Trendy Boys
+        </label>
+        <label
+          ><input type="checkbox" (change)="onBrandChange('Trendy Girl ')" />
+          Trendy Girl
+        </label>
+        <label
+          ><input
+            type="checkbox"
+            (change)="onBrandChange('Cute Comfy Frocks ')"
+          />
+          Cute Comfy Frocks
+        </label>
+      </div>
+    </div>
+
+    <div>
+      <h5>Color</h5>
+      <div id="colors">
+        <div *ngFor="let color of colors">
+          <h5
+            [style.backgroundColor]="color"
+            class="Product-color"
+            (click)="filterByColor(color)"
+          ></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="pricefilter">
+      <h2>{{ productName }}</h2>
+      <button>Sort By:</button>
+      <button (click)="lHPrice()">Price(Low To High)</button>
+      <button (click)="HlPrice()">Price(Hight To Low)</button>
+    </div>
+    <div class="card-group">
+      <div class="card" *ngFor="let item of MensProduct">
+        <img
+          src="{{ item.image }}"
+          class="card-img-top"
+          alt="..."
+          routerLink="/details/{{ item.category }}/{{ item._id }}"
+        />
+        <div
+          class="card-body"
+          routerLink="/details/{{ item.category }}/{{ item._id }}"
+        >
+          <h5 class="card-title">{{ item.brand }}</h5>
+          <p class="card-text">{{ item.description }}</p>
+
+          <p class="card-text">
+            <small class="text-body-secondary">₹ {{ item.price }}</small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

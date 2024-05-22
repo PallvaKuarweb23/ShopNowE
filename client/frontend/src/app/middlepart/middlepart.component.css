@@ -1,0 +1,61 @@
+.card-group {
+  /* border: 1px solid red; */
+  /* height: 540px; */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+.card-group > div {
+  padding: 10px;
+  /* border: 1px solid red; */
+  height: 520px;
+  align-items: center;
+  cursor: pointer;
+  /* justify-content: center; */
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+h1 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.card-img-top {
+  height: 300px;
+  width: 200px;
+}
+#img ~ img {
+  border: 1px solid red;
+  width: 20px;
+  height: 20px;
+}
+#card-group1 > div {
+  height: 350px;
+}
+#card-group1 {
+  margin-bottom: 0px;
+}
+/* Apply styles for screens with a maximum width of 767px (typical for smartphones) */
+@media screen and (max-width: 767px) {
+  /* Your mobile styles here */
+  .card-group {
+    /* border: 1px solid red; */
+    /* height: 540px; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+  .card-group > div {
+    height: 580px;
+  }
+  .card-group > div > img {
+    width: 140px;
+    height: 250px;
+  }
+}
+/* #links {
+  border: 1px solid red;
+  margin-left: 2%;
+} */

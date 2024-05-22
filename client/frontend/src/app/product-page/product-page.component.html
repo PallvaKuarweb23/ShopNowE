@@ -1,0 +1,82 @@
+<div class="mainContainer">
+  <div class="left">
+    <h4>Filters</h4>
+
+    <div>
+      <h5>Brands</h5>
+      <div class="brand">
+        <label
+          ><input type="checkbox" (change)="onBrandChange('Friskers')" />
+          Friskers
+        </label>
+        <label
+          ><input type="checkbox" (change)="onBrandChange('Roadster')" />
+          Roadster
+        </label>
+        <label
+          ><input type="checkbox" (change)="onBrandChange('Tommy Hilfige')" />
+          Tommy Hilfige
+        </label>
+        <label
+          ><input type="checkbox" (change)="onBrandChange('Puma')" /> Puma
+        </label>
+        <label
+          ><input
+            type="checkbox"
+            (change)="onBrandChange('HRX by Hrithik Roshan')"
+          />
+          HRX by Hrithik Roshan</label
+        >
+      </div>
+    </div>
+
+    <div>
+      <h5>Color</h5>
+      <div id="colors">
+        <div *ngFor="let color of colors">
+          <h5
+            [style.backgroundColor]="color"
+            class="Product-color"
+            (click)="filterByColor(color)"
+          ></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="pricefilter">
+      <h2>{{ productName }}</h2>
+      <button>Sort By:</button>
+      <button (click)="lHPrice()">Price(Low To High)</button>
+      <button (click)="HlPrice()">Price(Hight To Low)</button>
+    </div>
+    <div class="card-group">
+      <div class="card" *ngFor="let item of MensProduct">
+        <img
+          src="{{ item.image }}"
+          class="card-img-top"
+          alt="..."
+          routerLink="/details/{{ item.category }}/{{ item._id }}"
+        />
+        <div
+          class="card-body"
+          routerLink="/details/{{ item.category }}/{{ item._id }}"
+        >
+          <h5 class="card-title">{{ item.brand }}</h5>
+          <p class="card-text">{{ item.description }}</p>
+
+          <p class="card-text">
+            <small class="text-body-secondary">₹ {{ item.price }}</small>
+          </p>
+          <!-- <div class="card-button">
+            <button>
+              <a routerLink="/details/{{ item._id }}">View Details</a>
+            </button>
+            <button><i class="fa fa-heart"></i></button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

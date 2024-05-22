@@ -1,0 +1,80 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><h1>ShopNow</h1></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse custom-collapse"
+      id="navbarSupportedContent"
+    >
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="ullist1">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLink="product">Mens</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="womenproduct">Womens</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="kidsproduct">Kids</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search" id="ullist">
+        <input
+          #serchedProducts
+          (input)="searchProduct($event)"
+          (blur)="hideresults()"
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+
+        <button
+          (click)="submitSearch(serchedProducts.value)"
+          class="btn btn-outline-success"
+          type="submit"
+        >
+          Search
+        </button>
+        <ul class="suggested-search" *ngFor="let item of searchProducts">
+          <li>{{ item.brand }}</li>
+        </ul>
+      </form>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="ullist3">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="register"
+            ><i class="fa fa-user"></i
+          ></a>
+          <p>{{ getUserData().name }}</p>
+        </li>
+        <li class="nav-item" *ngIf="isUserLoggedIn()" (click)="logout()">
+          <a class="nav-link">
+            <i class="fa fa-sign-out"></i>
+          </a>
+          <p>Logout</p>
+        </li>
+
+        <li class="nav-item" (click)="redirect()">
+          <a class="nav-link"
+            ><i class="fa fa-shopping-bag"></i><span>{{ cartItem }}</span></a
+          >
+          <p>bag</p>
+        </li>
+        <li class="nav-item" (click)="orderSummary()">
+          <a class="nav-link"><i class="fa fa-cart-plus fa-xs"></i></a>
+
+          <p>orders</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
